@@ -2,14 +2,7 @@
 <html>
   <head>
     <title>Signup</title>
-    <!-- Bootstrap -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="../js/validation.js"></script>
+    <?php include('header.php');?>
   </head>
   <body>
     <div class="container mt-2 mb-4">
@@ -17,11 +10,12 @@
         <div class="col-sm-4 border border-primary shadow rounded pt-2">
             <div class="text-center"><h3>Sign Up</h3></div>
             <div class="col-sm-12">
-                <form method="post" id="singnupFrom" onSubmit="return validation();">
+                <form method="post" id="singnupFrom" onSubmit="return validateForm();">
                     <div id="next-form">
                         <div class="form-group">
                             <label class="font-weight-bold">Name <small class="text-danger"></small></label>
                             <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name">
+                            <span  class="form_errors" id="name_error"></span>                 
                         </div>
                         <div class="form-group">
                           <label class="font-weight-bold">Email</label>
@@ -44,7 +38,7 @@
                             <label><input type="checkbox" name="condition" id="condition"> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>
                         </div> -->
                         <div class="form-group">
-                            <input type="submit" name="submit" value="Sign Up" class="btn btn-block btn-danger">
+                            <input type="button" name="submit" value="Sign Up" class="btn btn-block btn-danger">
                         </div>
                     </div> <!--/.next-form-->
                 </form>
