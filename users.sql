@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2020 at 12:20 PM
+-- Generation Time: Jan 21, 2020 at 04:42 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -37,16 +37,16 @@ CREATE TABLE `users` (
   `role` enum('user','admin') NOT NULL,
   `createdDate` date NOT NULL,
   `modifiedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `status` enum('active','inactive') NOT NULL DEFAULT 'active'
+  `status` enum('active','inactive') NOT NULL DEFAULT 'active',
+  `addedBy` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userID`, `name`, `email`, `password`, `address`, `role`, `createdDate`, `modifiedDate`, `status`) VALUES
-(1, 'Vidya', 'vidya.sdhevale24@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'pune', 'admin', '2020-01-21', '2020-01-21 10:43:51', 'active'),
-(3, 'Sagar', 'sagi8900@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'goa', 'user', '2020-01-21', '2020-01-21 11:17:48', 'active');
+INSERT INTO `users` (`userID`, `name`, `email`, `password`, `address`, `role`, `createdDate`, `modifiedDate`, `status`, `addedBy`) VALUES
+(1, 'pradeep', 'pradeep@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'mumbai', 'admin', '2020-01-21', '2020-01-21 15:38:51', 'active', 0);
 
 --
 -- Indexes for dumped tables
@@ -67,7 +67,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

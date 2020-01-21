@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "f2146139-c7c8-431e-af11-c0d3fc204b39",
+		"name": "userManagementSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost/userManagementSystem/controllers/signup.php",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Raj\",\n\t\"email\":\"raj@gmail.com\",\n\t\"password\":\"123456\",\n\t\"address\":\"mumbai\",\n\t\"role\":\"role\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/userManagementSystem/controllers/signup.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"userManagementSystem",
+						"controllers",
+						"signup.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/userManagementSystem/controllers/login.php",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"raj@gmail.com\",\n\t\"password\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/userManagementSystem/controllers/login.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"userManagementSystem",
+						"controllers",
+						"login.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/userManagementSystem/controllers/userList.php",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/userManagementSystem/controllers/userList.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"userManagementSystem",
+						"controllers",
+						"userList.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/userManagementSystem/controllers/edit.php?1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"vidya.sdhevale24@gmail.com\",\n\t\"password\":\"123456\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/userManagementSystem/controllers/edit.php?userID=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"userManagementSystem",
+						"controllers",
+						"edit.php"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "userID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/userManagementSystem/controllers/update.php",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"Raj\",\n\t\"email\":\"raj@gmail.com\",\n\t\"password\":\"123456\",\n\t\"address\":\"mumbai\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost/userManagementSystem/controllers/signup.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"userManagementSystem",
+						"controllers",
+						"signup.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

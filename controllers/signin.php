@@ -7,7 +7,6 @@ require_once SITE_ROOT."/config/database_connection.php";
 $form_data = json_decode(file_get_contents('php://input'), true);
 $status 	= '';
 $message	= '';
-$userList 	= array();
 $output 	= array();
 
 if(empty($form_data['email']) && empty($form_data['password'])){
@@ -26,7 +25,12 @@ if (mysqli_num_rows($result) > 0) {
 	    	$output['error'] 	= "Sorry! User don't have permission to Login.";;
 		    $output['status']  	= "Fail";
 		}else{
-	    	$sql 	= 	"select * from users where email !='".$form_data['email']."' and password !='".$form_data['password']."'";
+			//Create session for logged in user
+			session_start();
+			$_SESSION['email'] = $form_data['email'];
+			include("userList.php");
+			
+	    	/*$sql 	= 	"select * from users where email !='".$form_data['email']."'";
 			$res    = 	mysqli_query($con, $sql);
 			if (mysqli_num_rows($res) > 0) {
 				$i=0;
@@ -37,17 +41,14 @@ if (mysqli_num_rows($result) > 0) {
 					$userList[$i]['role'] = $r['role'];
 					$i++;
 				}
-				//Create session for logged in user
-				session_start();
-				$_SESSION['email'] = $form_data['email'];
-
+				
 				$output['userList']	=	$userList;
 				$output['message']  = 	"User List";
 	    		$output['status']  	= 	"success!";
 	    	}else{
 	    		$output['message']  = 	"User list does not exist";
 	    		$output['status']  	= 	"Fail!";
-	    	}
+	    	}*/
     	}
 }else{
 		$output['message']  = 	"Email or password does not exist.";
@@ -55,6 +56,5 @@ if (mysqli_num_rows($result) > 0) {
    }
 
 mysqli_close($con);
-
 echo json_encode($output);
 ?>
