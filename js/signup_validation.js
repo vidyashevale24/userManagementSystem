@@ -4,10 +4,8 @@ $("#singnupFrom").validate({
 			name:{
 				required: true,
 			},
-			username:{
+			address:{
 				required: true,
-				minlength:6,
-				maxlength:16,
 				character_num_underscore_dash: true,
 			},
 			password:{
@@ -21,10 +19,8 @@ $("#singnupFrom").validate({
 			name:{
 				required: "Enter your full name.",
 			},
-			username:{
-				required: "Enter username.",
-				minlength:"username is too short.",
-				maxlength:"Username is too long.",
+			address:{
+				required: "Enter address.",
 				character_num_underscore_dash: "Username can contain characters, numbers, underscore or hyphen.",				
 			},
 			password: 

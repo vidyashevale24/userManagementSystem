@@ -1,79 +1,88 @@
-    function emailCheck(){
-        if($("#email").val()==""){
-            $("#email").addClass('is-invalid');
-            return false;
-        }else{
-            var regMail     =   /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
-            if(regMail.test($("#email").val()) == false){
-                $("#email").addClass('is-invalid');
-                return false;
-            }else{
-                $("#email").removeClass('is-invalid');
-                //$('#next-form').collapse('show');
+$(document).ready(function(e) {
+    /*Sign Up form validation */
+        $('form[id="singnupForm"]').validate({
+            debug: true,
+            errorElement: 'span',
+            highlight: function(element, errorClass, validClass) {
+              $(element).parents("div.control-group").addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+              $(element).parents(".is-invalid").removeClass('is-invalid');
+            },
+            rules:{
+            name:{
+                required: true,
+            },
+            address:{
+                required: true,
+                character_num_underscore_dash: true,
+            },
+            password:{
+                required:true,              
+                minlength:6,
+                maxlength:16,
+            },
+            email:{
+                required:true,              
+                email: true
             }
- 
-        }
-    }
-    function validateForm(){
-        var valid = true;
-          var regMail     =   /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
-            if(regMail.test($("#email").val()) == false){
-                $("#email").addClass('is-invalid');
-                valid = false;
-            }else{
-                $("#email").removeClass('is-invalid');
-                valid = true;
-                //$('#next-form').collapse('show');
+        },
+        messages:{
+            name:{
+                required: "Enter your full name.",
+            },
+            address:{
+                required: "Please enter address.",
+                character_num_underscore_dash: "Username can contain characters, numbers, underscore or hyphen.",               
+            },
+            password: {
+                required: "Enter your password.",
+                minlength:"Password should be at least 6 characters long.",
+                maxlength:"Password is too long.",
+            },
+            email:{
+                required: "Enter email address.",
             }
-           
-            if($("#name").val()==""){
-                $("#name").addClass('is-invalid');
-                valid = false;
-            }else{
-                $("#name").removeClass('is-invalid');
-                valid = true;
-            }
-
-            if($("#address").val()==""){
-                $("#address").addClass('is-invalid');
-                valid = false;
-            }else{
-                $("#address").removeClass('is-invalid');
-                valid = true;
-            }
-
-            if($("#password").val()==""){
-                $("#password").addClass('is-invalid');
-                valid = false;
-           }else{
-                $("#password").removeClass('is-invalid');
-                valid = true;
-            }
-            return valid;
-   }
-    $(document).ready(function(e) {
-        $('#email').blur(function(){       
-            var regMail     =   /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
-            if(regMail.test($("#email").val()) == false){
-                $("#email").addClass('is-invalid');
-                return false;
-            }else{
-                $("#email").removeClass('is-invalid');
-                //$('#next-form').collapse('show');
-            }
-            
+          },
+          submitHandler: function(form) {
+            form.submit();
+          }
         });
-     
-        $("#singnupFrom").on("click",function(){
-            
-            var valid; 
-            valid = validateForm();
-            if($valid == true){
-                alert ("here");
-            }else{
-                alert("no");
+    
+        $('form[id="singnInForm"]').validate({
+            debug: true,
+            errorElement: 'span',
+            highlight: function(element, errorClass, validClass) {
+              $(element).parents("div.control-group").addClass('is-invalid');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+              $(element).parents(".is-invalid").removeClass('is-invalid');
+            },
+            rules:{
+                password:{
+                    required:true,              
+                    minlength:6,
+                    maxlength:16,
+                },
+                email:{
+                    required:true,              
+                    email: true
+                }
+            },
+            messages:{
+            password: {
+                required: "Enter your password.",
+                minlength:"Password should be at least 6 characters long.",
+                maxlength:"Password is too long.",
+            },
+            email:{
+                required: "Email address is required.",
+                email:"Enter valid email address"
             }
-            console.log(valid);
+          },
+          submitHandler: function(form) {
+            form.submit();
+          }
         });
-                
+
     });
