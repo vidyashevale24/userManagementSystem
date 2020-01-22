@@ -31,10 +31,10 @@ if($session == "yes"){
 	}   
 		$output['userList']	=	$userList;
 		$output['message']  = 	"User List";
-		$output['status']  	= 	"success!";
+		$output['status']  	= 	"Success";
 	}else{
 		$output['message']  = 	"User list does not exist";
-		$output['status']  	= 	"success!";
+		$output['status']  	= 	"Success";
 	}
 
 	//Code to check userList is loaded by API or include by another page
