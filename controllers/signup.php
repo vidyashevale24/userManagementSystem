@@ -9,30 +9,33 @@ if(isset($_POST['signup']))
 	$message= 	'';
 	$status = 	'';
 	$output = 	array();
+	$error = 	array();
+	$form_data = array();
+
 	$date   = 	date('Y-m-d');
 
 	if(empty($_POST['name'])){
 			$error[] = 'Name is required';
 		}else{
-			$name = $_POST['name'];
+			$form_data['name'] = trim($_POST['name']);
 		}
 
 		if(empty($_POST['email'])){
 			$error[] = 'email is required';
 		}else{
-			$email = $_POST['email'];
+			$form_data['email'] = trim($_POST['email']);
 		}
 
 		if(empty($_POST['password'])){
 			$error[] = 'password is required';
 		}else{
-			$password = $_POST['password'];
+			$form_data['password'] = trim($_POST['password']);
 		}
 
 		if(empty($_POST['address'])){
 			$error[] = 'Address is required';
 		}else{
-			$address = $_POST['address'];
+			$form_data['address'] = trim($_POST['address']);
 		}
 
 		/*if(empty($_POST['role'])){
@@ -45,7 +48,7 @@ if(isset($_POST['signup']))
 		if(empty($error)){
 			if(!isset($_SESSION)) {   session_start();  } 
 			$_SESSION['action'] 		= 'signup';
-			$_SESSION['form_data'] 	 	= $_POST;
+			$_SESSION['form_data'] 	 	= $form_data;
 			require_once SITE_ROOT."/models/user.php";
 		}else{
 			$validation_error = implode(",",$error);

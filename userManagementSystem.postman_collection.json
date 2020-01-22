@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost/userManagementSystem/controllers/signup.php",
+			"name": "http://localhost/userManagementSystem/controllers/signup",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -18,11 +18,37 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\":\"Raj\",\n\t\"email\":\"raj@gmail.com\",\n\t\"password\":\"123456\",\n\t\"address\":\"mumbai\",\n\t\"role\":\"role\"\n}"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "ghgh",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "pradeep@yahoo.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "pune",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "signup",
+							"value": "sdd",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
-					"raw": "http://localhost/userManagementSystem/controllers/signup.php",
+					"raw": "http://localhost/userManagementSystem/controllers/signup",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -30,7 +56,7 @@
 					"path": [
 						"userManagementSystem",
 						"controllers",
-						"signup.php"
+						"signup"
 					]
 				}
 			},
@@ -49,11 +75,27 @@
 					}
 				],
 				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"email\":\"raj@gmail.com\",\n\t\"password\":\"123456\"\n}"
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "raj@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "login",
+							"value": "Sign In",
+							"type": "text"
+						}
+					]
 				},
 				"url": {
-					"raw": "http://localhost/userManagementSystem/controllers/login.php",
+					"raw": "http://localhost/userManagementSystem/controllers/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -61,7 +103,7 @@
 					"path": [
 						"userManagementSystem",
 						"controllers",
-						"login.php"
+						"login"
 					]
 				}
 			},
@@ -121,7 +163,7 @@
 					"raw": "{\n\t\"email\":\"vidya.sdhevale24@gmail.com\",\n\t\"password\":\"123456\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost/userManagementSystem/controllers/edit.php?userID=1",
+					"raw": "http://localhost/userManagementSystem/controllers/edit?userID=1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -129,7 +171,7 @@
 					"path": [
 						"userManagementSystem",
 						"controllers",
-						"edit.php"
+						"edit"
 					],
 					"query": [
 						{
@@ -160,10 +202,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\":\"Raj\",\n\t\"email\":\"raj@gmail.com\",\n\t\"password\":\"123456\",\n\t\"address\":\"mumbai\"\n}"
+					"raw": "{\n\t\"name\":\"sagi\",\n\t\"email\":\"sagar@gmail.com\",\n\t\"password\":\"123456\",\n\t\"address\":\"Goa\",\n\t\"role\":\"user\",\n\t\"userID\":\"3\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost/userManagementSystem/controllers/signup.php",
+					"raw": "http://localhost/userManagementSystem/controllers/update",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -171,7 +213,7 @@
 					"path": [
 						"userManagementSystem",
 						"controllers",
-						"signup.php"
+						"update"
 					]
 				}
 			},

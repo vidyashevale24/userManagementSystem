@@ -3,12 +3,11 @@
 require_once __DIR__."/../config.php";
 require_once SITE_ROOT."/config/cors.php";
 
-if(isset($_POST['login']))
+if(isset($_POST['forget']))
 {
 	$status 	= '';
 	$message	= '';
 	$output 	= array();
-	$error 		= array();
 	$form_data 	= array();
 
 	if(empty($_POST['email'])){
@@ -17,16 +16,8 @@ if(isset($_POST['login']))
 		$form_data['email'] = trim($_POST['email']);
 	}
 
-	if(empty($_POST['password'])){
-		$error[] = 'password is required';
-	}else{
-		$form_data['password'] = trim($_POST['password']);
-	}
 	if(empty($error)){
-		if(!isset($_SESSION)) {   session_start();  } 
-		$_SESSION['action'] 		= 'login';
-		$_SESSION['form_data'] 	 	= $form_data;
-		require_once SITE_ROOT."/models/user.php";
+		//check email exist here and sent email 
 	}else{
 		$validation_error = implode(",",$error);
 		$output['message']   = $validation_error;

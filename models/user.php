@@ -39,7 +39,7 @@ if(isset($_SESSION['action'])){
 			$role = 'user'; 
 
 		$query = "INSERT INTO users (name, email, password, address, role ,createdDate)
-		VALUES ('".$name."', '".$email."', '".md5($password)."', '".$address."', '".$role."', '".$date."')";
+		VALUES ('".$form_data['name']."', '".$form_data['email']."', '".md5($form_data['password'])."', '".$form_data['address']."', '".$role."', '".$date."')";
 
 		if (mysqli_query($con, $query)) {
 			$output['message'] = "New record created successfully.";
