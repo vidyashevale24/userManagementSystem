@@ -35,8 +35,6 @@ if(isset($_POST['login']))
 	mysqli_close($con);
 	echo json_encode($output);
 }else{
-	//header("Location: ".SITE_ROOT."/views/login.php");
-	//header (SITE_ROOT."/views/login.php");
-	//echo "view";
+	echo "view";
 }
 ?>

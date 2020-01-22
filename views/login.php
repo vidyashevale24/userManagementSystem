@@ -18,19 +18,33 @@
                 <div id="error"></div>
 
                 <div class="form-group">
+                    <label class="label_color">Email</label>
                     <input type="email" class="form-control" placeholder="Email address" name="email" id="email" />
                     <span id="check-e"></span>
                 </div>
 
                 <div class="form-group">
+                    <label class="label_color">Password</label>
                     <input type="password" class="form-control" placeholder="Password" name="password" id="password" />
                 </div>
                 <input type ="hidden" name="base_url" id="base_url" value="<?=base_url?>" >
                 <hr />
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default" name="login" id="btn-login">
+                    <button type="submit" class="btn btn-default"  name="login" value="Sign In" id="btn-login">
                     <span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In</button>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-xs-6">
+                           Don't have an account? <a href="../controllers/signup" name="signup" >Sign Up</a>
+                        </div>
+                        <div class="col-xs-6" style="text-align:right">
+                             <a class="text-align:right" href="../controllers/forgotpassword" name="forgotpassword" >Forget password</a>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

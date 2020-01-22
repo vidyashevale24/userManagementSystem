@@ -32,7 +32,6 @@ if(isset($_SESSION['action'])){
 
 	//SignUp and addUser method
 	if($_SESSION['action'] == 'signup' || $_SESSION['action'] == 'addUser'){
-		echo $_SESSION['action'];
 		$form_data = $_SESSION['form_data'];
 		if($_SESSION['action'] == 'signup' ) 
 			$role = 'admin' ;
@@ -43,7 +42,7 @@ if(isset($_SESSION['action'])){
 		VALUES ('".$name."', '".$email."', '".md5($password)."', '".$address."', '".$role."', '".$date."')";
 
 		if (mysqli_query($con, $query)) {
-			$output['message'] = "New record created successfully";
+			$output['message'] = "New record created successfully.";
 			$output['status']  = "Success";
 		} else {
 		    $output['message']  = "Error: " . $query . "<br>" . mysqli_error($con);

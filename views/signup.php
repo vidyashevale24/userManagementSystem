@@ -1,44 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Signup</title>
+    <head>
+    <title>Sign Up</title>
+    <?php 
+        //Include header file to load css and js
+        include('header.php');
+        require_once __DIR__."/../config.php";
+    ?>
+    </head>
+    <body>
+        <div class="signin-form">
+            <div class="container">
+                <form class="form-signin" method="post" id="signup-form">
+                    <h2 class="form-signin-heading">Sign Up</h2>
+                    <hr />
+                    <div id="error"></div>
 
-    <?php include('header.php');?>
-  </head>
-  <body>
-    <div class="container mt-2 mb-4">
-    <div class="row justify-content-md-center">
-        <div class="col-sm-4 border border-primary shadow rounded pt-2">
-            <div class="text-center"><h3>Sign Up</h3></div>
-            <div class="col-sm-12">
-                <form method="post" id="singnupForm" >
-                        <div class="form-group">
-                            <label class="font-weight-bold">Name <small class="text-danger"></small></label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter your Name">
-                        </div>
-                        <div class="form-group">
-                         <label class="font-weight-bold">Email</label>
-                              <input type="email" name="email" id="email" class="form-control" placeholder="Enter valid email">
-                        </div>
-                         <div class="form-group">
-                            <label class="font-weight-bold">Address </label>
-                            <input type="text" name="address" id="address" class="form-control" placeholder="Enter your Address">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="font-weight-bold">Password</label>
-                            <input type="password" name="password" id="password" class="form-control" placeholder="***********">
-                        </div>
+                    <div class="form-group">
+                         <label class="label_color">Name</label>
+                        <input type="text" class="form-control" placeholder="Name" name="name" id="name" />
+                    </div>
 
-                        <!-- <div class="form-group">
-                            <label><input type="checkbox" name="condition" id="condition"> I agree with the <a href="javascript:;">Terms &amp; Conditions</a> for Registration.</label>
-                        </div> -->
-                        <div class="form-group">
-                            <input type="submit" name="submit" value="Sign Up" class="btn btn-block btn-danger">
-                        </div>
-                    </div> <!--/.next-form-->
+                    <div class="form-group">
+                        <label class="label_color">Email</label>
+                        <input type="email" class="form-control" placeholder="Email address" name="email" id="email" />
+                        <span id="check-e"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label_color">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password" id="password" />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="label_color">Address</label>
+                        <input type="text" class="form-control" placeholder="Address" name="address" id="address" />
+                    </div>
+                    <input type ="hidden" name="base_url" id="base_url" value="<?=base_url?>" >
+                    <hr />
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-default" name="signup" value="Sign Up" id="btn-signup">
+                        <span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign Up</button>
+                    </div>
+
+                    <div class="form-group">
+                       Already have an account? <a href="../controllers/login" name="signin" >Sign In</a>
+                    </div>
                 </form>
-          </div>
-    </div>
-</div>
+            </div>
+        </div>
+    </body>
 </html>
+    
