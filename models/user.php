@@ -161,10 +161,11 @@ if(isset($_SESSION['action'])){
 				//echo "<a href='".base_url."/controller/confirm.php?token=".$token."' target='_blank' title='Click to reset password'>Reset Password</a>";
 				$sender    = 	'vidya.shevale24@gmail.com';
 				$recipient = 	$email;
+				$server    =	$_SERVER['HTTP_HOST'] ;
 
 				// subject
 				$subject = "Reset your password";
-				$url = $url = "<a href='$server/userManagementSystem/views/confirm.php?token='".$token ."' target='_blank'  title='Click to reset password'>$server/userManagementSystem/views/confirm.php?token='".$token ."'</a>";
+				$url = "<a href='$server/userManagementSystem/views/confirm.php?token='".$token ."' target='_blank'  title='Click to reset password'>Forgot Password</a>";
 				// compose message
 				$message ='Click on below link to reset password <br>'.$url;
 

@@ -23,8 +23,8 @@ if(isset($_POST['forgot']))
 		$_SESSION['email'] 	 	= trim($_POST['email']);
 		require_once SITE_ROOT."/models/user.php";
 	}else{
-		$validation_error = implode(",",$error);
-		$output['message']   = $validation_error;
+		$validation_error 	= implode(",",$error);
+		$output['message']  = $validation_error;
 		$output['status']  	= "Fail";
 		echo json_encode($output);
 		exit;

@@ -374,7 +374,7 @@ $('document').ready(function()
 
 				$.ajax({
 				type : 'POST',
-				url  : 'controllers/forgot',
+				url  : '../controllers/forgot',
 				data : data,
 				beforeSend: function()
 				{	
@@ -427,23 +427,23 @@ $('document').ready(function()
 
 				$.ajax({
 				type : 'POST',
-				url  : '../../controllers/confirm',
+				url  : '../controllers/confirm',
 				data : data,
 				beforeSend: function()
 				{	
 					$("#error").fadeOut();
-					$("#btn-editUser").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
+					$("#btn-confirm").html('<span class="glyphicon glyphicon-transfer"></span> &nbsp; sending ...');
 				},
 				success :  function(response)
 				   {			
 				  	console.log(response);
 						if(response['status']=="Success"){
-							$("#btn-editUser").html('<img src="../../images/btn-ajax-loader.gif" /> &nbsp; Please wait ...');
+							$("#btn-confirm").html('<img src="../images/btn-ajax-loader.gif" /> &nbsp; Please wait ...');
 						}
 						else if(response['status']=="Fail"){
 							$("#error").fadeIn(1000, function(){						
 								$("#error").html('<div class="alert alert-danger"> <span class="glyphicon glyphicon-info-sign"></span> &nbsp; '+response['message']+'</div>');
-								$("#btn-editUser").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Edit User');
+								$("#btn-confirm").html('<span class="glyphicon glyphicon-log-in"></span> &nbsp; Reset ');
 							});
 						}
 				  }
