@@ -35,14 +35,13 @@
                     <span class="glyphicon glyphicon-log-in"></span> &nbsp; Sign In</button>
                 </div>
 
-
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-6">
                            Don't have an account? <a href="../controllers/signup" name="signup" >Sign Up</a>
                         </div>
                         <div class="col-xs-6" style="text-align:right">
-                             <a class="text-align:right" href="../controllers/forgotpassword" name="forgotpassword" >Forget password</a>
+                             <a class="text-align:right" href="../controllers/forgot" name="forgot" >Forgot password</a>
                         </div>
                     </div>
                 </div>

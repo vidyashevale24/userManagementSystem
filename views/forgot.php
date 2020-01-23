@@ -12,7 +12,7 @@
     <body>
     <div class="signin-form">
         <div class="container">
-            <form class="form-signin" method="post" id="forgot-form">
+            <form class="form-signin" method="post" id="forgot-form" action="../controllers/forgot.php">
                 <h2 class="form-signin-heading">Forgot Password</h2>
                 <hr />
                 <div id="error"></div>

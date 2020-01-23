@@ -4,7 +4,7 @@ require_once __DIR__."/../config.php";
 require_once SITE_ROOT."/config/cors.php";
 require_once SITE_ROOT."/config/database_connection.php";
 
-if(isset($_POST['signup']))
+if((isset($_POST['signup']) )|| isset($_POST['addUser']) )
 {
 	$message= 	'';
 	$status = 	'';
@@ -38,12 +38,11 @@ if(isset($_POST['signup']))
 			$form_data['address'] = trim($_POST['address']);
 		}
 
-		/*if(empty($_POST['role'])){
+		if(empty($_POST['role'])){
 			$error[] = 'Role is required';
 		}else{
-			$role = $_POST['role'];
-		}*/
-
+			$form_data['role'] = $_POST['role'];
+		}
 
 		if(empty($error)){
 			if(!isset($_SESSION)) {   session_start();  } 
@@ -60,7 +59,7 @@ if(isset($_POST['signup']))
 	mysqli_close($con);
 	echo json_encode($output);
 }else{
-	echo "view";
+	header("Location:../views/signup");
 }
 
 

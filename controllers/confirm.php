@@ -10,14 +10,18 @@ if(isset($_POST['confirm']))
 	$output 	= array();
 	$form_data 	= array();
 
-	if(empty($_POST['email'])){
-		$error[] = 'email is required';
+	if(empty($_POST['password'])){
+		$error[] = 'Password is required';
 	}else{
-		$form_data['email'] = trim($_POST['email']);
+		$form_data['password'] = trim($_POST['password']);
 	}
 
 	if(empty($error)){
-		//check email exist here and sent email 
+		//change password
+		$_SESSION['action'] 		= 'confirm_password';
+		$_SESSION['password'] 	 	= trim($_POST['password']);
+		$_SESSION['token'] 	 		= trim($_POST['token']);
+		require_once SITE_ROOT."/models/user.php";
 	}else{
 		$validation_error = implode(",",$error);
 		$output['message']   = $validation_error;
@@ -28,6 +32,6 @@ if(isset($_POST['confirm']))
 	mysqli_close($con);
 	echo json_encode($output);
 }else{
-	echo "view";
+	header("Location: ../views/confirm.php");
 }
 ?>

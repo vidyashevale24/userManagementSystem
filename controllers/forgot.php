@@ -1,9 +1,10 @@
 <?php
+session_start();
 //Include site path and cors file
 require_once __DIR__."/../config.php";
 require_once SITE_ROOT."/config/cors.php";
 
-if(isset($_POST['forget']))
+if(isset($_POST['forgot']))
 {
 	$status 	= '';
 	$message	= '';
@@ -18,6 +19,9 @@ if(isset($_POST['forget']))
 
 	if(empty($error)){
 		//check email exist here and sent email 
+		$_SESSION['action'] 	='forgot_password';
+		$_SESSION['email'] 	 	= trim($_POST['email']);
+		require_once SITE_ROOT."/models/user.php";
 	}else{
 		$validation_error = implode(",",$error);
 		$output['message']   = $validation_error;
@@ -28,6 +32,6 @@ if(isset($_POST['forget']))
 	mysqli_close($con);
 	echo json_encode($output);
 }else{
-	echo "view";
+	header("Location: ../views/forgot.php");
 }
 ?>

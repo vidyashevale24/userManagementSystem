@@ -37,6 +37,15 @@
                         <input type="text" class="form-control" placeholder="Address" name="address" id="address" />
                     </div>
                     <input type ="hidden" name="base_url" id="base_url" value="<?=base_url?>" >
+
+                    <div class="form-group">
+                      <label  class="label_color" for="sel1">Select Role:</label>
+                      <select class="form-control" id="sel1" name="role" id="role">
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                      </select>
+                    </div>
+                    
                     <hr />
 
                     <div class="form-group">

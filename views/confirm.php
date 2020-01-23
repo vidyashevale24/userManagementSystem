@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>COnfirm Password</title>
+    <title>Confirm Password</title>
 
     <?php 
         //Include header file to load css and js
@@ -12,7 +12,7 @@
     <body>
     <div class="signin-form">
         <div class="container">
-            <form class="form-signin" method="post" id="forgot-form">
+            <form class="form-signin" method="post" id="confirm-form" action="../controllers/confirm.php">
                 <h2 class="form-signin-heading">Confirm Password</h2>
                 <hr />
                 <div id="error"></div>
@@ -27,7 +27,7 @@
                     <input type="password" class="form-control" placeholder="Enter confirm password" name="con_pass" id="con_pass" />
                 </div>
 
-                <input type ="hidden" name="base_url" id="base_url" value="<?=base_url?>" >
+                <input type ="hidden" name="token" id="base_url" value="<?php echo $_GET['token'] ?>" >
                 <hr />
 
                 <div class="form-group">

@@ -27,6 +27,7 @@ if(isset($_POST['login']))
 		$_SESSION['action'] 		= 'login';
 		$_SESSION['form_data'] 	 	= $form_data;
 		require_once SITE_ROOT."/models/user.php";
+		echo json_encode($output);
 	}else{
 		$validation_error = implode(",",$error);
 		$output['message']   = $validation_error;
@@ -34,9 +35,7 @@ if(isset($_POST['login']))
 		echo json_encode($output);
 		exit;
 	}
-	mysqli_close($con);
-	echo json_encode($output);
 }else{
-	echo "view";
+	header("Location:../views/login");
 }
 ?>
