@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "http://localhost/userManagementSystem/controllers/signup",
+			"name": "http://localhost/userManagementSystem/controllers/user/add",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -79,7 +79,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "raj@gmail.com",
+							"value": "vidya@gmail.com",
 							"type": "text"
 						},
 						{
@@ -214,6 +214,64 @@
 						"userManagementSystem",
 						"controllers",
 						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost/userManagementSystem/controllers/user/add",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "ghgh",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "sdsjsszds@yahoo.com",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "pune",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "signup",
+							"value": "sdd",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost/userManagementSystem/controllers/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"userManagementSystem",
+						"controllers",
+						"user",
+						"add"
 					]
 				}
 			},
